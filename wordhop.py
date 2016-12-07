@@ -20,7 +20,7 @@ class Wordhop:
         if kwargs.get('serverRoot'):
             self.serverRoot = kwargs.get('serverRoot')
         else:
-            self.serverRoot = 'https://developer.wordhop.io'
+            self.serverRoot = 'https://wordhopapi.herokuapp.com'
         if kwargs.get('socketServer'):
             self.socketServer = kwargs.get('socketServer')
         else:
