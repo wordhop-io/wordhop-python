@@ -1,0 +1,5 @@
+pytest
+requests
+requests-toolbelt
+six
+wordhop
