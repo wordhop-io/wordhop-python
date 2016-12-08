@@ -35,6 +35,8 @@ class Wordhop:
         self.platform = platform
         self.clientkey = client_key
 
+        self.start()
+
 
     def hopIn(self, x):
         print('hopIn')
