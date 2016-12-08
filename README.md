@@ -12,6 +12,9 @@ With Wordhop you can sync up your Python-based Chatbot to Slack, so you can reta
 * [Wordhop for Slack](https://slack.com/oauth/authorize?scope=users:read,users:read.email,commands,chat:write:bot,channels:read,channels:write,bot&client_id=23850726983.39760486257)
 * [A Chatbot built in Python](https://developer.wordhop.io/botbuilders.html)
 
+###Installation
+`run: pip install -r requirements.txt in your shell`
+
 ###Looking for something we don't yet support?  
 * [Join our mailing list and we'll notifiy you](https://www.wordhop.io/contact.html)
 * [Contact Support](mailto:support@wordhop.io)
