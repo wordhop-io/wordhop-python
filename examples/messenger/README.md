@@ -14,5 +14,15 @@ You'll need to setup a [Facebook App](https://developers.facebook.com/apps/), Fa
 ### Installation
 
 ```bash
-pip install -r requirements.txt
+$ pip install -r requirements.txt
+```
+
+### Usage
+
+Open [wordhop_messenger_bot.py](./wordhop_messenger_bot.py) and modify `WORDHOP_API_KEY`, `WORDHOP_CLIENT_KEY`, `ACCESS_TOKEN` and `VERIFY_TOKEN` to match your own.
+
+Run the following command to get your bot online:
+
+```bash
+$ python wordhop_messenger_bot.py
 ```

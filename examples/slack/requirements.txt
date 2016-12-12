@@ -1,0 +1,5 @@
+requests
+pyyaml
+websocket-client
+slackclient
+wordhop
