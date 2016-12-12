@@ -18,7 +18,8 @@ $ pip install -r requirements.txt
 
 ### Usage
 
-Open [wordhopConnector.py](./plugins/wordhopConnector.py) and modify `WORDHOP_API_KEY` and `WORDHOP_CLIENT_KEY` to match your own.
+Open [rtmbot.conf](./rtmbot.conf) and add your `SLACK_TOKEN`. 
+Then open [wordhopConnector.py](./plugins/wordhopConnector.py) and modify `WORDHOP_API_KEY` and `WORDHOP_CLIENT_KEY` to match your own.
 
 Run the following command to get your bot online:
 
