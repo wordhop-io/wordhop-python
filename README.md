@@ -135,7 +135,7 @@ if text == 'help':
     sendIt(recipient_id, 'Hang tight. Let me see what I can do.')
     # send a Wordhop alert to your slack channel
     # that the user could use assistance
-    wordhop.assistanceRequested(outgoingMessage);
+    wordhop.assistanceRequested(incomingMessage);
 ```
 
 ##### Human Take Over:
