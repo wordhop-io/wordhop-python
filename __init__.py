@@ -1,2 +1,2 @@
-from wordhop import Wordhop
+from .wordhop import Wordhop
 

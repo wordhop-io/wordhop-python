@@ -1,0 +1,2 @@
+requests
+socketIO_client
