@@ -96,10 +96,13 @@ class Wordhop:
                     messageData = {'channel': channel, 'text': text}
                 self.hopOut(messageData)
                 self.trigger('chat_response', args[0])
-            
+        
+            def on_channel_update_response(*args):
+                self.trigger('channel_update', args[0])
             
             with SocketIO(self.socketServer) as socketIO:
                 socketIO.on('chat response', on_chat_response_response)
+                socketIO.on('channel update', on_channel_update_response)
                 socketIO.on('socket_id_set', on_socket_set_response)
                 socketIO.wait()
             

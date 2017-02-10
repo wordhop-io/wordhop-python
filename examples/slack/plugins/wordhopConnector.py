@@ -18,6 +18,11 @@ class WordhopListener():
             plugin.outputs.append([channel, text])
         
         wordhop.on('chat_response', onChatResponse)
+        
+        def onChannelUpdate(self, args):
+            print('on_channel_update', args)
+        
+        wordhop.on('channel_update', onChannelUpdate)
         wordhop.start()
 
 

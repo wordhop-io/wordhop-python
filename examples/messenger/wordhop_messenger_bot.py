@@ -4,10 +4,12 @@ in any messages that the bot receives and echos it back.
 """
 from flask import Flask, request
 from pymessenger.bot import Bot
+from pymessenger import Element, Button
 from wordhop import Wordhop
 import json
 
 app = Flask(__name__)
+
 
 ACCESS_TOKEN = ''
 VERIFY_TOKEN = ''
@@ -17,10 +19,25 @@ bot = Bot(ACCESS_TOKEN)
 wordhop = Wordhop(WORDHOP_API_KEY,WORDHOP_CLIENT_KEY,'messenger', ACCESS_TOKEN)
 
 def onChatResponse(self, args):
-    channel = args["channel"]
-    text = args["text"]
-    bot.send_text_message(channel, text)
+    try:
+        print('wordhop chat_response args:' + str(args))
+        channel = args["channel"]
+        text = args["text"]
+        bot.send_text_message(channel, text)
+    except Exception as e:
+        print(e, exc_info=True)
+
 wordhop.on('chat_response', onChatResponse)
+
+
+def onChannelUpdate(self, args):
+    try:
+        print('wordhop channel_update args:' + str(args))
+    except Exception as e:
+        print(e, exc_info=True)
+    
+wordhop.on('channel_update', onChannelUpdate)
+
 
 @app.route("/", methods=['GET', 'POST'])
 
@@ -44,9 +61,10 @@ def hello():
         for event in output['entry']:
             messaging = event['messaging']
             for messageData in messaging:
+                j = json.dumps(messageData)
+                hopInResponse = wordhop.hopIn(messageData)
+                
                 if messageData.get('message'):
-                    j = json.dumps(messageData)
-                    hopInResponse = wordhop.hopIn(messageData)
                     # If your bot is paused, stop it from replying
                     if hopInResponse.get('paused'):
                         return "Success"
